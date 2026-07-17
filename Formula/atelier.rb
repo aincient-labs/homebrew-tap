@@ -1,25 +1,25 @@
 class Atelier < Formula
   desc "The `atelier` command — install, update, back up, and manage your Atelier CMS appliance."
   homepage "https://github.com/aincient-labs/manager"
-  version "0.1.0-rc.2"
+  version "0.1.0"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/aincient-labs/manager/releases/download/v0.1.0-rc.2/atelier-aarch64-apple-darwin.tar.xz"
-      sha256 "63bc0c73d5011ebbda18a2aff4b66a71edaaa1290af919478da245a3fda91e59"
+      url "https://github.com/aincient-labs/manager/releases/download/v0.1.0/atelier-aarch64-apple-darwin.tar.xz"
+      sha256 "abebd1f9acec75bc23161fb8ddb48590ce4ce50c04bdf84d1c52f36fb0ac5d13"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/aincient-labs/manager/releases/download/v0.1.0-rc.2/atelier-x86_64-apple-darwin.tar.xz"
-      sha256 "4b4003f29add4a55d1b79fa8430c18994e9d85d06446a55d4dc062e8fcd171d8"
+      url "https://github.com/aincient-labs/manager/releases/download/v0.1.0/atelier-x86_64-apple-darwin.tar.xz"
+      sha256 "6d3831fd206cbfff439a14d764ae32d54ab35117fec4817011d2a979cc9ce136"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/aincient-labs/manager/releases/download/v0.1.0-rc.2/atelier-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "144906a3fda2800c36c2ca94e461bcb985062c9e27899c4e2a1301a0b46243a0"
+      url "https://github.com/aincient-labs/manager/releases/download/v0.1.0/atelier-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "7b6e723e66902ccc47625459473ae54f1078da5a2f4f0cc9c9a9a0c9df70f76c"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/aincient-labs/manager/releases/download/v0.1.0-rc.2/atelier-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "0ab3f7dbd61392f796ec9342718b58a4909190bccb8c61935c25277bd1c61262"
+      url "https://github.com/aincient-labs/manager/releases/download/v0.1.0/atelier-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "667bbf1d37272f5236e81c3007c37248cfe790a238c0e3d50b731ba497fcdd84"
     end
   end
   license "GPL-2.0-or-later"
