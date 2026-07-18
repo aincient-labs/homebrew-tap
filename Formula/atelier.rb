@@ -1,25 +1,25 @@
 class Atelier < Formula
   desc "The `atelier` command — install, update, back up, and manage your Atelier CMS appliance."
   homepage "https://github.com/aincient-labs/manager"
-  version "0.2.1"
+  version "0.2.2"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/aincient-labs/manager/releases/download/v0.2.1/atelier-aarch64-apple-darwin.tar.xz"
-      sha256 "bb4e44f6d5d80d15b04d6dd6559c0135ce57f1b6419cf50f4209a43b5c03a43b"
+      url "https://github.com/aincient-labs/manager/releases/download/v0.2.2/atelier-aarch64-apple-darwin.tar.xz"
+      sha256 "18b6333311b7297e65d6d997a0e6e732f04a414df4f7567a57820cf0579dfc30"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/aincient-labs/manager/releases/download/v0.2.1/atelier-x86_64-apple-darwin.tar.xz"
-      sha256 "fd4b79275d2961109fad8b1fd39668e075df0d7a05a8e52e05f81738da8b82fa"
+      url "https://github.com/aincient-labs/manager/releases/download/v0.2.2/atelier-x86_64-apple-darwin.tar.xz"
+      sha256 "03dfc47a13307444129b3059536e48fd30735d532999abbde6531642dbf03b1e"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/aincient-labs/manager/releases/download/v0.2.1/atelier-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "d4bbf9d526ebf1dc7fb0a2844c9ae3f90f6e81f0b4b4a3e33eb0a63b05ac5b99"
+      url "https://github.com/aincient-labs/manager/releases/download/v0.2.2/atelier-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "971b1bc7750c6e8bc2500f884cdc5f1bc3bac1cfe5aadf39f9e1cf2b284f6840"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/aincient-labs/manager/releases/download/v0.2.1/atelier-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "d4e5cfd57a01edebc40810c4a66de4999786612b43d4b479444beed8ceb43dc3"
+      url "https://github.com/aincient-labs/manager/releases/download/v0.2.2/atelier-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "592bbd45b65e7bd1d66ee33959c8436139bec41bc4510d45ea83f057d3bbbe92"
     end
   end
   license "GPL-2.0-or-later"
