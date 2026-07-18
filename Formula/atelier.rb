@@ -1,36 +1,36 @@
 class Atelier < Formula
   desc "The `atelier` command — install, update, back up, and manage your Atelier CMS appliance."
   homepage "https://github.com/aincient-labs/manager"
-  version "0.2.0"
+  version "0.2.1"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/aincient-labs/manager/releases/download/v0.2.0/atelier-aarch64-apple-darwin.tar.xz"
-      sha256 "a4df93007d6ab990a371e579eb898ecda714fed151e6c0841ca8bde8af0ffa3f"
+      url "https://github.com/aincient-labs/manager/releases/download/v0.2.1/atelier-aarch64-apple-darwin.tar.xz"
+      sha256 "bb4e44f6d5d80d15b04d6dd6559c0135ce57f1b6419cf50f4209a43b5c03a43b"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/aincient-labs/manager/releases/download/v0.2.0/atelier-x86_64-apple-darwin.tar.xz"
-      sha256 "a3bdb122f88e9c8bfd15d3b3681b1b650112c2ea1df1993cd3487eb14c32cddf"
+      url "https://github.com/aincient-labs/manager/releases/download/v0.2.1/atelier-x86_64-apple-darwin.tar.xz"
+      sha256 "fd4b79275d2961109fad8b1fd39668e075df0d7a05a8e52e05f81738da8b82fa"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/aincient-labs/manager/releases/download/v0.2.0/atelier-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "ab116433fb05c1a53d5ea7bb6fe93049de46afe27dca6d9c56d4b18cf5be26ea"
+      url "https://github.com/aincient-labs/manager/releases/download/v0.2.1/atelier-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "d4bbf9d526ebf1dc7fb0a2844c9ae3f90f6e81f0b4b4a3e33eb0a63b05ac5b99"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/aincient-labs/manager/releases/download/v0.2.0/atelier-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "1d6d35d0916a8eee970497487d4c568544b0c591364a44ced97bcc0ddede4a99"
+      url "https://github.com/aincient-labs/manager/releases/download/v0.2.1/atelier-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "d4e5cfd57a01edebc40810c4a66de4999786612b43d4b479444beed8ceb43dc3"
     end
   end
   license "GPL-2.0-or-later"
 
   BINARY_ALIASES = {
-    "aarch64-apple-darwin":      {},
+    "aarch64-apple-darwin": {},
     "aarch64-unknown-linux-gnu": {},
-    "x86_64-apple-darwin":       {},
-    "x86_64-pc-windows-gnu":     {},
-    "x86_64-unknown-linux-gnu":  {},
-  }.freeze
+    "x86_64-apple-darwin": {},
+    "x86_64-pc-windows-gnu": {},
+    "x86_64-unknown-linux-gnu": {}
+  }
 
   def target_triple
     cpu = Hardware::CPU.arm? ? "aarch64" : "x86_64"
@@ -48,10 +48,18 @@ class Atelier < Formula
   end
 
   def install
-    bin.install "atelier" if OS.mac? && Hardware::CPU.arm?
-    bin.install "atelier" if OS.mac? && Hardware::CPU.intel?
-    bin.install "atelier" if OS.linux? && Hardware::CPU.arm?
-    bin.install "atelier" if OS.linux? && Hardware::CPU.intel?
+    if OS.mac? && Hardware::CPU.arm?
+      bin.install "atelier"
+    end
+    if OS.mac? && Hardware::CPU.intel?
+      bin.install "atelier"
+    end
+    if OS.linux? && Hardware::CPU.arm?
+      bin.install "atelier"
+    end
+    if OS.linux? && Hardware::CPU.intel?
+      bin.install "atelier"
+    end
 
     install_binary_aliases!
 
