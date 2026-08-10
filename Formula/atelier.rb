@@ -1,25 +1,25 @@
 class Atelier < Formula
   desc "The `atelier` command — install, update, back up, and manage your Atelier CMS appliance."
   homepage "https://github.com/aincient-labs/manager"
-  version "0.7.1"
+  version "0.7.2"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/aincient-labs/manager/releases/download/v0.7.1/atelier-aarch64-apple-darwin.tar.xz"
-      sha256 "fc619ef667ee09cd034d975ccaeeb0927d670583241b23d9e8d3e1965de0fd85"
+      url "https://github.com/aincient-labs/manager/releases/download/v0.7.2/atelier-aarch64-apple-darwin.tar.xz"
+      sha256 "8a3421ac60480419c804d732db1e956d6a9c04109c74bba3217e58edb3bb2f13"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/aincient-labs/manager/releases/download/v0.7.1/atelier-x86_64-apple-darwin.tar.xz"
-      sha256 "7f33f2c702f1c6971943fef02f284c6ce10c488193c1e980aa8f05b2e4bbfb52"
+      url "https://github.com/aincient-labs/manager/releases/download/v0.7.2/atelier-x86_64-apple-darwin.tar.xz"
+      sha256 "fed5fb222e87bf2a26e7deb814b851a97396e17d9449400319fc0013b6e58e88"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/aincient-labs/manager/releases/download/v0.7.1/atelier-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "467e71aac266ec6d152e3df09005e794b2d774dc80e9011c325ee3c6f29a31ea"
+      url "https://github.com/aincient-labs/manager/releases/download/v0.7.2/atelier-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "7911d05c0a84ffa3f43f9be7fa277a455b0a0bcd9568aba1901404e66c48f05b"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/aincient-labs/manager/releases/download/v0.7.1/atelier-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "6e83af66e1f1e0dd3204773e211ec3719781576c1fefda267da9f4c2bdb5e224"
+      url "https://github.com/aincient-labs/manager/releases/download/v0.7.2/atelier-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "39a7dc16730c0dcb01eeaf66fdf27de2d5b12a4e813a8b5a7955884eec8d1007"
     end
   end
   license "GPL-2.0-or-later"
@@ -48,10 +48,18 @@ class Atelier < Formula
   end
 
   def install
-    bin.install "atelier" if OS.mac? && Hardware::CPU.arm?
-    bin.install "atelier" if OS.mac? && Hardware::CPU.intel?
-    bin.install "atelier" if OS.linux? && Hardware::CPU.arm?
-    bin.install "atelier" if OS.linux? && Hardware::CPU.intel?
+    if OS.mac? && Hardware::CPU.arm?
+      bin.install "atelier"
+    end
+    if OS.mac? && Hardware::CPU.intel?
+      bin.install "atelier"
+    end
+    if OS.linux? && Hardware::CPU.arm?
+      bin.install "atelier"
+    end
+    if OS.linux? && Hardware::CPU.intel?
+      bin.install "atelier"
+    end
 
     install_binary_aliases!
 
