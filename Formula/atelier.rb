@@ -1,25 +1,25 @@
 class Atelier < Formula
   desc "The `atelier` command — install, update, back up, and manage your Atelier CMS appliance."
   homepage "https://github.com/aincient-labs/manager"
-  version "0.12.0"
+  version "0.12.1"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/aincient-labs/manager/releases/download/v0.12.0/atelier-aarch64-apple-darwin.tar.xz"
-      sha256 "07e7ad8b1401d046a8b8f25b4e050af106efda0611e06d9c7afc59c3d431c5b1"
+      url "https://github.com/aincient-labs/manager/releases/download/v0.12.1/atelier-aarch64-apple-darwin.tar.xz"
+      sha256 "649419a17b24bbfc4908089f7ed39d3141175d1012a3b5eb572795c005a9960f"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/aincient-labs/manager/releases/download/v0.12.0/atelier-x86_64-apple-darwin.tar.xz"
-      sha256 "a23d62158c379ac6dd51043fd4d537fd45e08a1fbc7451d264dacf1960e804b2"
+      url "https://github.com/aincient-labs/manager/releases/download/v0.12.1/atelier-x86_64-apple-darwin.tar.xz"
+      sha256 "b6cae70f2605d7a47f51b79c9beaf0c0c35c8690c59c82cbd85675ad73601944"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/aincient-labs/manager/releases/download/v0.12.0/atelier-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "1ff7804d4c8b7883809b92b3119d83fab9a99b7274b662ffb798d17d8a1ec28f"
+      url "https://github.com/aincient-labs/manager/releases/download/v0.12.1/atelier-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "c90f88ed9a69749b085117ab0b11ae0608b2695c7276ab6aff5f1e91370b5cdf"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/aincient-labs/manager/releases/download/v0.12.0/atelier-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "29803f58ef9327eb6db69352d6ddc24332c5e9ff7476eb75bdfd99239eacfc75"
+      url "https://github.com/aincient-labs/manager/releases/download/v0.12.1/atelier-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "dd3f642d199ffdc8ffeac66c48ad33ac75c03e668c0e2c339152b2fa2f718541"
     end
   end
   license "GPL-2.0-or-later"
